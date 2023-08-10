@@ -1,4 +1,5 @@
 name: Movie exam Prep
+
 on:
   push:
     branches: [ "main" ]
@@ -16,9 +17,9 @@ jobs:
         node-version: 14.x
         cache: 'npm'
 
-    - name: Build
-      run:  npm install
-    - name: Test
+    - name: NPM INSTALL
+      run: npm install
+    - name: UNIT Tests
       run: npm run test:unit
 
   deploy:  
