@@ -20,3 +20,12 @@ jobs:
       run:  npm install
     - name: Test
       run: npm run test:unit
+
+  deploy:  
+    needs: build
+    steps:
+    - name: 'Deploy to Render' 
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+        service-id: ${{ secrets.Movie_SERVICE_ID }}
+        api-key: ${{ secrets.Movie_API_KEY }}
